@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class test : MonoBehaviour
+
+{
+    private Rigidbody2D _rb;
+
+    [SerializeField]private int _playerHealth = 100;
+    [SerializeField] private float _playerSpeed = 4.6f;
+    private bool _isGrounded = true;
+    private string _playerName = "Shanaka";
+    private Vector3 _playerPosition = new Vector3(-5f, 0f, 0f);
+  
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        _rb = gameObject.GetComponent<Rigidbody2D>();
+        _rb.gravityScale = 0;
+    }
+
+    // Update is called once per frame
+  
+}
