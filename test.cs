@@ -1,3 +1,6 @@
+//Move object left or right
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +15,7 @@ public class test : MonoBehaviour
     void Start()
     {
         _rb = gameObject.GetComponent<Rigidbody2D>();
-        _walkSpeed = 5.5f;
+        _walkSpeed = 0.5f; // Adjust this value as needed
     }
 
     // Update is called once per frame
@@ -22,7 +25,8 @@ public class test : MonoBehaviour
 
         if (_inputHorizontal != 0)
         {
-            _rb.AddForce(new Vector2(_inputHorizontal * _walkSpeed * Time.deltaTime, 0));
+            // Move the object left or right by a fixed amount
+            transform.Translate(new Vector2(_inputHorizontal * _walkSpeed, 0));
         }
     }
 }
